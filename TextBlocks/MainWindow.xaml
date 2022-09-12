@@ -1,0 +1,24 @@
+﻿<Window x:Class="TextBlocks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextBlocks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="200">
+    <StackPanel>
+        <TextBlock x:Name="topTextBlock">
+            <Bold>Hello</Bold> World and hello <Italic>you</Italic>.
+            <LineBreak/>
+            Go To <Hyperlink RequestNavigate="ToGoogle_RequestNavigate" NavigateUri="https://www.google.com" >google.com</Hyperlink>
+        </TextBlock>
+        <TextBlock TextWrapping="Wrap" Foreground="Aqua" >
+            Lorem ipsum dolor sit amet, 
+            <Span Foreground="Black">
+                consectetur adipiscing elit
+            </Span>
+            , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </TextBlock>
+
+    </StackPanel>
+</Window>
