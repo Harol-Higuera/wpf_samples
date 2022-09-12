@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:LabelDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <Label Margin="16,16,16,0"
+               BorderThickness="1"
+               BorderBrush="Black">
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="0,0,10,0" Width="32" Height="32" Source="https://pics.freeicons.io/uploads/icons/png/3203843181607043061-512.png"/>
+                <AccessText FontSize="30" Text="Message"></AccessText>
+            </StackPanel>
+        </Label>
+        <TextBox Margin="16" FontSize="32">
+           
+        </TextBox>
+    </StackPanel>
 </Window>
