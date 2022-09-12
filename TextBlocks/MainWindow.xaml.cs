@@ -27,19 +27,23 @@ namespace TextBlocks
 
 
             // Adding TextBlock Programatically
+            // START
 
-            TextBlock textBlock = new TextBlock();
-            textBlock.Text = "Hello world";
-            textBlock.Inlines.Add("This one is using inlines\n");
-            textBlock.Inlines.Add(new Run("Custom formatted text inlined here.")
-            {
-                Foreground = Brushes.Orange,
-                TextDecorations = TextDecorations.Underline
-            });
-            textBlock.TextWrapping = TextWrapping.Wrap;
-            textBlock.Foreground = Brushes.BurlyWood;
+            //TextBlock textBlock = new TextBlock();
+            //textBlock.Text = "Hello world";
+            //textBlock.Inlines.Add("This one is using inlines\n");
+            //textBlock.Inlines.Add(new Run("Custom formatted text inlined here.")
+            //{
+            //    Foreground = Brushes.Orange,
+            //    TextDecorations = TextDecorations.Underline
+            //});
+            //textBlock.TextWrapping = TextWrapping.Wrap;
+            //textBlock.Foreground = Brushes.BurlyWood;
 
-            this.Content = textBlock;
+            //this.Content = textBlock;
+
+            // END
+
         }
 
         private void ToGoogle_RequestNavigate(object sender, RequestNavigateEventArgs e)
