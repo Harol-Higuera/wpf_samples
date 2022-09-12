@@ -1,0 +1,42 @@
+﻿<Window x:Class="RadioButtons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadioButtons"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="300">
+    <StackPanel Margin="10">
+        <Label FontWeight="Bold">WHo do you vote for?</Label>
+        <RadioButton GroupName="presidents" Name="optionObama" Checked="onObamaChecked" VerticalContentAlignment="Center" Margin="0,0,0,10">
+            <WrapPanel>
+                <Image Width="50" Source="https://cdn.britannica.com/43/172743-138-545C299D/overview-Barack-Obama.jpg"/>
+                <Label FontSize="20">Obama</Label>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton GroupName="presidents"  Name="optionTrump" Checked="onTrumpChecked" VerticalContentAlignment="Center" Margin="0,0,0,10">
+            <WrapPanel>
+                <Image Width="50" Source="https://static01.nyt.com/images/2020/04/27/us/politics/00-trump-cand-page/00-trump-cand-page-mediumSquareAt3X.jpg"/>
+                <Label FontSize="20">Trump</Label>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton GroupName="presidents"  Name="optionMcCain" Checked="onMcCainChecked" VerticalContentAlignment="Center" Margin="0,0,0,10">
+            <WrapPanel>
+                <Image Width="50" Source="https://media.gettyimages.com/photos/sen-and-presidential-candidate-john-mccain-gestures-while-delivering-picture-id75400030?s=612x612"/>
+                <Label FontSize="20">MCCain</Label>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton GroupName="presidents"  Name="optionBiden" Checked="onBidenChecked" VerticalContentAlignment="Center" Margin="0,0,0,10">
+            <WrapPanel>
+                <Image Width="50" Source="https://d2v9ipibika81v.cloudfront.net/uploads/sites/59/Biden-e1618391453189-1140x684.jpg"/>
+                <Label FontSize="20">Biden</Label>
+            </WrapPanel>
+        </RadioButton>
+
+        <Label FontWeight="Bold">How do you feel about it?</Label>
+        <RadioButton GroupName="feeling">Good</RadioButton>
+        <RadioButton GroupName="feeling">Ok</RadioButton>
+        <RadioButton GroupName="feeling">Not happy</RadioButton>
+        
+    </StackPanel>
+</Window>
