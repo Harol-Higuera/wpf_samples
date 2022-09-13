@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="200" Width="300">
+    <StackPanel Margin="3">
+        <Label FontSize="25">Name</Label>
+        <TextBox FontSize="25"></TextBox>
+        <Label FontSize="25">Password</Label>
+        <PasswordBox 
+            FontSize="25"
+            PasswordChar="*"
+            MaxLength="10"
+            ></PasswordBox>
+    </StackPanel>
 </Window>
