@@ -1,0 +1,19 @@
+﻿<Window x:Class="WrapPannelDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WrapPannelDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="200">
+    <WrapPanel>
+        <Button>Tag 01</Button>
+        <Button Width="100">Tag 02</Button>
+        <Button>Tag 03</Button>
+        <Button Height="100">Tag 04</Button>
+        <Button>Tag 05</Button>
+        <Button Width="100">Tag 06 </Button>
+        <Button>Tag 07</Button>
+        <Button>Tag 08</Button>
+    </WrapPanel>
+</Window>
