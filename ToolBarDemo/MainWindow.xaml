@@ -1,0 +1,27 @@
+﻿<Window x:Class="ToolBarDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolBarDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Click="onDeleteClicked" ToolTip="Delete Text">
+                    <Image Width="20" Source="https://cdn-icons-png.flaticon.com/512/1345/1345874.png"/>
+                </Button>
+                <Separator/>
+                <Label>Font Size</Label>
+                <ComboBox x:Name="myComboBox1" SelectionChanged="onSelectionChanged">
+                    <ComboBoxItem>8</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>18</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBox x:Name="myTextBox"></TextBox>
+    </DockPanel>
+</Window>
