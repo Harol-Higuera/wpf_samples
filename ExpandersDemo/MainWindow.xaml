@@ -1,0 +1,36 @@
+﻿<Window x:Class="ExpandersDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpandersDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Expander
+            Expanded="onExpanded"
+            >
+            <Expander.Header>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <Image Source="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Logo_Doraemon_new_version.jpg/220px-Logo_Doraemon_new_version.jpg" />
+                    <TextBlock
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        >Click me to Expand!!!</TextBlock>
+                </StackPanel>
+            </Expander.Header>
+            
+            <StackPanel>
+                <Button>Soe button</Button>
+                <TextBlock
+                    Margin="10"
+                    TextWrapping="Wrap"
+                    FontSize="20"
+                    >
+                    The first attempt of a Doraemon animated series was in 1973, by Nippon Television. After a January 1973 pilot named Doraemon Mirai Kara Yattekuru (ドラえもんが未来からやってくる, Doraemon Coming from the Future),[53] twenty-six episodes, each with two segments, were broadcast on Nippon TV from April 1 to September 30 of the same year.[54] The series was directed by Mitsuo Kaminashi with voice cast from Aoni Production; the character Doraemon was voiced by Kōsei Tomita, then later by Masako Nozawa.[55] Later in the series, the animation studio, Nippon TeleMovie Productions, went bankrupt, and the masters were sold off or destroyed.[56] The series was re-aired on Nippon TV and several local stations until 1979,[57][58] when Shogakukan requested Toyama Television to cease broadcasting.[59] Some of the segments were found in the archives of IMAGICA in 1995,[60] and some others were recovered by Jun Masami in 2003.[55] As of 2013, 21 of 52 segments have known to survive, two of which without audio.[
+                </TextBlock>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>
