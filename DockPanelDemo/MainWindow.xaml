@@ -1,0 +1,19 @@
+﻿<Window x:Class="DockPanelDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DockPanelDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel
+        >
+        <Button DockPanel.Dock="Top">Docked to the Top</Button>
+        <Button DockPanel.Dock="Right">Docked to the Right</Button>
+        <Button DockPanel.Dock="Bottom">Docked to the Bottom</Button>
+        <Button DockPanel.Dock="Left">Docked to the Left 1</Button>
+        <Button DockPanel.Dock="Left">Docked to the Left 2</Button>
+        <Button Background="AliceBlue">Docked to the Center, I`m just taking all the available space</Button>
+
+    </DockPanel>
+</Window>
