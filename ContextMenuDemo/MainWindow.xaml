@@ -1,0 +1,42 @@
+﻿<Window x:Class="ContextMenuDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContextMenuDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <StackPanel>
+        <TextBox
+            x:Name="myTextBox"
+            Height="100">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem 
+                        x:Name="myBold"
+                        Header="Bold"
+                        IsCheckable="True"
+                        Checked="myBoldChecked"
+                        Unchecked="myBoldUnChecked"
+                        ></MenuItem>
+                    <MenuItem 
+                        x:Name="myItalic"
+                        Header="Italic"
+                        IsCheckable="True"
+                        Checked="myItalicChecked"
+                        Unchecked="myItalicUnChecked"
+                        ></MenuItem>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+        <Button 
+            x:Name="changeTextButton"
+            Content="Click me!!">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Change Text" Click="onChangeTextClicked"></MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </StackPanel>
+</Window>
