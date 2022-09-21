@@ -15,13 +15,17 @@ namespace MVVM_Prism_Demo01
        
         protected override Window CreateShell()
         {
+            // Set the firs Window that should be on the screen
+            //
             return Container.Resolve<MainWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA>("ViewA");
-            containerRegistry.RegisterForNavigation<ViewB>("ViewB");
+            // Register objects for navigation.
+            //
+            containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<ViewB>();
         }
     }
 }

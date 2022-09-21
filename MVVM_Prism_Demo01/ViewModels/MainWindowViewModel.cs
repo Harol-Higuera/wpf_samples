@@ -6,6 +6,8 @@ namespace MVVM_Prism_Demo01.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        // PROPERTIES 
+        //
         private string _title = "Super Prism Application!!!";
         public string Title
         {
@@ -13,6 +15,8 @@ namespace MVVM_Prism_Demo01.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        // NAVIGATION BETWEEN THE TABS 
+        //
         private readonly IRegionManager _regionManager;
         public DelegateCommand<string> NavigateCommand { get; set; }
 

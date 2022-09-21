@@ -53,7 +53,7 @@ namespace MVVM_Prism_Demo01.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MVVM_Prism_Demo01;component/views/viewb.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MVVM_Prism_Demo01;V1.0.0.0;component/views/viewb.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ViewB.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

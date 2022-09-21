@@ -61,10 +61,5 @@ namespace MVVM_Prism_Demo01.ViewModels
         private void Execute() { 
             LastUpdated = DateTime.Now;
         }
-
-        // NAVIGATION
-        //
-
-
     }
 }
