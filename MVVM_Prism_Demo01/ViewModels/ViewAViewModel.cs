@@ -1,4 +1,6 @@
-﻿using Prism.Commands;
+﻿using MVVM_Prism_Demo01.Events;
+using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -20,25 +22,21 @@ namespace MVVM_Prism_Demo01.ViewModels
         public string FirstName
         {
             get { return _firstName; }
-            set 
-            { 
-                _firstName = value; 
-                UpdateCommand.RaiseCanExecuteChanged();
-            }
+            set { SetProperty(ref _firstName, value); }
         }
 
         private string _lastName;
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set { SetProperty(ref _lastName, value); }
         }
 
         private DateTime? _lastUpdated;
         public DateTime? LastUpdated
         {
             get { return _lastUpdated; }
-            set { _lastUpdated = value; }
+            set { SetProperty(ref _lastUpdated, value); }
         }
 
         // DELEGATE COMMAND:
@@ -48,18 +46,39 @@ namespace MVVM_Prism_Demo01.ViewModels
         // Initialize the Delegate Command called UpdateCommand
         // Subscibe FirstName and LastName to changes in the Delegate Command
         //
-        public ViewAViewModel() {
-            UpdateCommand = new DelegateCommand(Execute,CanExecute)
-                .ObservesProperty(() => FirstName)
-                .ObservesProperty(() => LastName);
-        }
-
         private bool CanExecute() {
             return !String.IsNullOrWhiteSpace(FirstName) && !String.IsNullOrWhiteSpace(LastName);
         }
 
         private void Execute() { 
             LastUpdated = DateTime.Now;
+
+            // Aggregator sends a result to whoever is listening to UpdateEvent
+            //
+            eventAggregator.GetEvent<UpdateEvent>().Publish(LastUpdated.ToString());
         }
+
+        // CONSTRUCTOR: Taken cared of by Prism
+        //
+        //
+        public ViewAViewModel(IEventAggregator eventAggregator)
+        {
+            // 1. Initialize the Delegate Command to give functionallity to the 
+            // User interface
+            //
+            UpdateCommand = new DelegateCommand(Execute, CanExecute)
+                .ObservesProperty(() => FirstName)
+                .ObservesProperty(() => LastName);
+
+            // 2. Initialize the event aggregator
+            this.eventAggregator = eventAggregator;
+        }
+
+
+        // SENDING MESSAGES TO ANOTHER SCREEN
+        // 
+        //
+        private IEventAggregator eventAggregator { get; }
+
     }
 }

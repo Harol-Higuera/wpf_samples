@@ -18,7 +18,7 @@ namespace MVVM_Prism_Demo01.Views
     /// <summary>
     /// Interaction logic for ViewB.xaml
     /// </summary>
-    public partial class ViewB : Page
+    public partial class ViewB : UserControl
     {
         public ViewB()
         {
