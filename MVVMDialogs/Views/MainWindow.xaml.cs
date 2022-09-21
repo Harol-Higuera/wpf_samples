@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using MVVMDialogs.Dialogs;
+using MVVMDialogs.ViewModels;
+using System.Windows;
 
 namespace MVVMDialogs.Views
 {
@@ -10,6 +12,10 @@ namespace MVVMDialogs.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            // Register this Dialog. Whenever we called the NotificationUserControlViewModel...
+            //
+            DialogService.RegisterDialog<NotificationUserControl, NotificationUserControlViewModel>();
         }
     }
 }

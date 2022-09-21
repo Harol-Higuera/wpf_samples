@@ -16,7 +16,16 @@ namespace MVVMDialogs.ViewModels
 
         void ExecuteShowDialog()
         {
-            _dialogService.ShowDialog();  
+            // 1. This way shows the dialog based on the Dialog Name
+
+            //_dialogService.ShowDialog("NotificationUserControl", result => {
+            //    var test = result;
+            //});
+
+            // 2. Tjis way shows the dialog based on the ViewModel Type
+            _dialogService.ShowDialog<NotificationUserControlViewModel> (result => {
+                var test = result;
+            });
         }
     }
 }

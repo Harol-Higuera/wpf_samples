@@ -28,3 +28,5 @@ C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net
 C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net6.0-windows\MVVMDialogs.pdb
 C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net6.0-windows\MVVMDialogs.genruntimeconfig.cache
 C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net6.0-windows\ref\MVVMDialogs.dll
+C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net6.0-windows\Dialogs\NotificationUserControl.g.cs
+C:\Users\harol_higuera\Documents\Workbench\wpf_samples\MVVMDialogs\obj\Debug\net6.0-windows\Dialogs\NotificationUserControl.baml
