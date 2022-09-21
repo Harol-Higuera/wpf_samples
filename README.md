@@ -4,8 +4,7 @@ Sample code used when getting to know about wpf
 
 &nbsp;
 
----
-## MVVM Dialogs
+### MVVM Dialogs
 &nbsp;
 
 - How to display a dialog from ViewModel
