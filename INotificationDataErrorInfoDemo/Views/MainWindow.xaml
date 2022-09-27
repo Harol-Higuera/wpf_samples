@@ -27,7 +27,7 @@
                                 <!--USE THIS TO SHOW THE ERROR BELOW THE TEXTBOX OVERLAPPING THE UI BELOW-->
                                 <!--LEAVE THE AdornedElementPlaceholder so the border only covers the TextBox-->
                                 
-                                <ItemsControl
+                                <!--<ItemsControl
                                             Margin="0 5 0 0"
                                             FontSize="12"
                                             ItemsSource="{Binding}">
@@ -36,7 +36,7 @@
                                             <TextBlock Foreground="Red" Text="{Binding ErrorContent}" />
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
-                                </ItemsControl>
+                                </ItemsControl>-->
                             </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
@@ -53,13 +53,13 @@
                                     <ScrollViewer x:Name="PART_ContentHost" />
                                 </Border>
                                 <!--USE THIS TO INCLUDE THE ERROR IN THE TEXTBOX-->
-                                <!--<ItemsControl Margin="0 5 0 0" FontSize="12" ItemsSource="{TemplateBinding Validation.Errors}">
+                                <ItemsControl Margin="0 5 0 0" FontSize="12" ItemsSource="{TemplateBinding Validation.Errors}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <TextBlock Foreground="Red" Text="{Binding ErrorContent}"/>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
-                                </ItemsControl>-->
+                                </ItemsControl>
                             </StackPanel>
                         </ControlTemplate>
                     </Setter.Value>
