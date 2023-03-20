@@ -88,9 +88,25 @@ namespace CustomControls.Views
             // 1:::: Update teh UI
             UpdateHandAngles(time);
             
-            // 2:::: Rise the event so the Parent View understands
+            // 2:::: Update TimeState
+            UpdateTimeState(time);
+
+            // 3:::: Rise the event so the Parent View understands
             // TODO: Handle Old and New Value in a better way 
             RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>(DateTime.Now.AddSeconds(-1), DateTime.Now, TimeChangedEvent));
+        }
+
+        private void UpdateTimeState(DateTime time)
+        {
+            // Correct condition: if (time.Hour is > 6 and < 18)
+            if (time.Second is > 10 and < 40)
+            {
+                VisualStateManager.GoToState(this, "Day", false);
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "Night", false);
+            }
         }
 
         private void UpdateHandAngles(DateTime time)
