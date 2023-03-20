@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -17,6 +18,18 @@ namespace CustomControls.Views
         private Line? _hourHand;
         private Line? _minuteHand;
         private Line? _secondHand;
+
+        // DependencyProperty: Is a property for XAML controllers. Allow us to 
+        // access the xaml components for styling, validation etc..
+        //
+        public static DependencyProperty ShowSecondsProperty = DependencyProperty.Register(nameof(ShowSeconds), typeof(bool),typeof(AnalogClock), new PropertyMetadata(true));
+        // Property in the Analog Clock that hooks up with the ShowSecondsProperty
+        public bool ShowSeconds
+        {
+            get => (bool)GetValue(ShowSecondsProperty);
+            set => SetValue(ShowSecondsProperty, value);
+        }
+
 
         static AnalogClock()
         {
@@ -31,6 +44,19 @@ namespace CustomControls.Views
             _hourHand = Template.FindName("PART_HourHand", this) as Line;
             _minuteHand = Template.FindName("PART_MinuteHand", this) as Line;
             _secondHand = Template.FindName("PART_SecondHand", this) as Line;
+
+            // Tide up ShowSecondsProperty to the second hand
+            // METHOD: By User a Binding
+            // NOTE: This demo uses Template Binding instead. (Implemented in AnalogClockStyle)
+            //
+            //Binding showSecondHandBinding = new Binding
+            //{
+            //    Path = new PropertyPath(nameof(ShowSeconds)),
+            //    Source = this,
+            //    Converter = new BooleanToVisibilityConverter()
+            //};
+            //_secondHand?.SetBinding(VisibilityProperty, showSecondHandBinding);
+
             UpdateHandAngles();
 
             // Implement update the handles every single second

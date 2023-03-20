@@ -9,6 +9,9 @@
             <Setter.Value>
                 <ControlTemplate
                     TargetType="views:AnalogClock">
+                    <ControlTemplate.Resources>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                    </ControlTemplate.Resources>
                     <Grid
                         RenderTransformOrigin="0.5, 0.5">
                         <Grid.RenderTransform>
@@ -34,6 +37,7 @@
                             X2="-100" />
                         <Line
                             x:Name="PART_SecondHand"
+                            Visibility="{TemplateBinding ShowSeconds, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Stroke="Red"
                             StrokeThickness="1"
                             VerticalAlignment="Center"
