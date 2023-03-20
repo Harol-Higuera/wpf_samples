@@ -7,8 +7,9 @@
 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <views:AnalogClock ShowSeconds="False"/>
-        <views:AnalogClock ShowSeconds="True"/>
+    <StackPanel
+        HorizontalAlignment="Center">
+        <views:AnalogClock ShowSeconds="True" TimeChanged="AnalogClock_OnTimeChanged"/>
+        <TextBlock x:Name="TbTime" Text="00:00:00" Margin="10" FontSize="50"/>
     </StackPanel>
 </Window>
