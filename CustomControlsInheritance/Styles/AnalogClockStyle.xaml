@@ -9,9 +9,11 @@
             <Setter.Value>
                 <ControlTemplate
                     TargetType="views:AnalogClock">
+                    <!-- Control Template Resources -->
                     <ControlTemplate.Resources>
                         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
                     </ControlTemplate.Resources>
+                    <!--UI Elements START-->
                     <Grid
                         RenderTransformOrigin="0.5, 0.5">
                         <!--Transformations-->

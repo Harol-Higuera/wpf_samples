@@ -15,7 +15,7 @@ namespace CustomControlsInheritance
 
         private void AnalogClock_OnTimeChanged(object sender, RoutedPropertyChangedEventArgs<DateTime> e)
         {
-            TbTime.Text = e.NewValue.ToString("hh:mm:ss");
+            //TbTime.Text = e.NewValue.ToString("hh:mm:ss");
         }
     }
 }

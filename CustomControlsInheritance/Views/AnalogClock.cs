@@ -5,6 +5,9 @@ using System.Windows.Shapes;
 
 namespace CustomControlsInheritance.Views
 {
+    [TemplatePart(Name = "PART_HourHand", Type = typeof(Line))]
+    [TemplatePart(Name = "PART_MinuteHand", Type = typeof(Line))]
+    [TemplatePart(Name = "PART_SecondHand", Type = typeof(Line))]
     public class AnalogClock: Clock
     {
         private Line? _hourHand;
@@ -41,11 +44,11 @@ namespace CustomControlsInheritance.Views
         }
 
         // virtual. Makes it overridable
-        protected override void OnTimeChanged(DateTime time)
+        protected override void OnTimeChanged(DateTime newTime)
         {
             // 1:::: Update the UI
-            UpdateHandAngles(time);
-            base.OnTimeChanged(time);
+            UpdateHandAngles(newTime);
+            base.OnTimeChanged(newTime);
         }
 
         private void UpdateHandAngles(DateTime time)

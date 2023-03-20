@@ -5,8 +5,20 @@ using System.Windows.Threading;
 
 namespace CustomControlsInheritance.Views
 {
+    [TemplateVisualState(Name = "Day", GroupName = "TimeStates")]
+    [TemplateVisualState(Name = "Night", GroupName = "TimeStates")]
     public class Clock: Control
     {
+        /// <summary>
+        /// Dependency Property for current time 
+        /// </summary>
+        public static DependencyProperty TimeProperty = DependencyProperty.Register(nameof(Time), typeof(DateTime), typeof(Clock), new PropertyMetadata(DateTime.Now));
+        public DateTime Time
+        {
+            get => (DateTime)GetValue(TimeProperty);
+            set => SetValue(TimeProperty, value);
+        }
+
         /// <summary>
         /// Property to alter the UI from the cs View Class
         /// Concepts:
@@ -52,14 +64,14 @@ namespace CustomControlsInheritance.Views
         }
 
         // virtual. Makes it overridable
-        protected virtual void OnTimeChanged(DateTime time)
+        protected virtual void OnTimeChanged(DateTime newTime)
         {
             // 2:::: Update TimeState
-            UpdateTimeState(time);
+            UpdateTimeState(newTime);
 
             // 3:::: Rise the event so the Parent View understands
-            // TODO: Handle Old and New Value in a better way 
-            RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>(DateTime.Now.AddSeconds(-1), DateTime.Now, TimeChangedEvent));
+            RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>(Time, Time, TimeChangedEvent));
+            Time = newTime;
         }
 
         private void UpdateTimeState(DateTime time)
