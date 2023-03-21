@@ -15,18 +15,18 @@
                     </ControlTemplate.Resources>
                     <!--UI Elements-->
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock 
-                            Text="{Binding Time.Hour, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <TextBlock
+                            Text="{Binding Time.Hour, StringFormat=D2, RelativeSource={RelativeSource TemplatedParent}}"/>
                         <TextBlock
                             x:Name="PART_Colon" Text=":" />
                         <TextBlock
-                            Text="{Binding Time.Minute, RelativeSource={RelativeSource TemplatedParent}}" />
+                            Text="{Binding Time.Minute, StringFormat=D2, RelativeSource={RelativeSource TemplatedParent}}" />
                         <TextBlock
                             Visibility="{TemplateBinding ShowSeconds, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Text=":" />
                         <TextBlock
                             Visibility="{TemplateBinding ShowSeconds, Converter={StaticResource BooleanToVisibilityConverter}}"
-                            Text="{Binding Time.Second, RelativeSource={RelativeSource TemplatedParent}}" />
+                            Text="{Binding Time.Second, StringFormat=D2, RelativeSource={RelativeSource TemplatedParent}}" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
