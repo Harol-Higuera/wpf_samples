@@ -12,11 +12,74 @@ namespace CustomControlsInheritance.Views
         /// <summary>
         /// Dependency Property for current time 
         /// </summary>
-        public static DependencyProperty TimeProperty = DependencyProperty.Register(nameof(Time), typeof(DateTime), typeof(Clock), new PropertyMetadata(DateTime.Now));
+        // *** Using TimeCoerceValueCallback. Change the value in runtime ***
+        //
+        public static DependencyProperty TimeProperty = DependencyProperty.Register(
+            nameof(Time),
+            typeof(DateTime),
+            typeof(Clock),
+            new PropertyMetadata(DateTime.Now, TimePropertyChangedCallback, TimeCoerceValueCallback)
+        );
+        // *** Using TimeValidateValueCallback.rise an exception in runtime *** (For testing could be good)
+        //
+        //public static DependencyProperty TimeProperty = DependencyProperty.Register(
+        //    nameof(Time),
+        //    typeof(DateTime),
+        //    typeof(Clock),
+        //    new PropertyMetadata(DateTime.Now, TimePropertyChangedCallback),
+        //    TimeValidateValueCallback
+        //);
+
         public DateTime Time
         {
             get => (DateTime)GetValue(TimeProperty);
             set => SetValue(TimeProperty, value);
+        }
+        // :::::::: Callback 1 :::::::::::::
+        // Called BEFORE the Property Changed Callback
+        // We can validate and return a boolean. If return FALSE an argument exception is raised
+        // THE VALIDATION IS JUST AN EXAMPLE
+        private static bool TimeValidateValueCallback(object value)
+        {
+            if (value is DateTime)
+            {
+                DateTime time = (DateTime)value;
+                // If odd number
+                if (time.Second % 2 == 1)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        // :::::::: Callback 2 :::::::::::::
+        // This Callback is used to modify the value in runtime
+        // Called BEFORE the Property Changed Callback
+        private static object TimeCoerceValueCallback(DependencyObject d, object baseValue)
+        {
+            if (baseValue is DateTime)
+            {
+                DateTime time = (DateTime)baseValue;
+                // If odd number
+                if (time.Second % 2 == 1)
+                {
+                    baseValue = time.AddSeconds(1);
+                }
+            }
+
+            return baseValue;
+        }
+        // :::::::: Callback 3 :::::::::::::
+        // This function is going to be called EVERY SINGLE TIME the dependency property changes
+        // The dependency object is the Clock but we have to cast it.
+        private static void TimePropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // Raise an event that a dependency property changed the value
+            if (d is Clock clock)
+            {
+                clock.RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>((DateTime)e.OldValue, (DateTime)e.NewValue, TimeChangedEvent));
+            }
         }
 
         /// <summary>
