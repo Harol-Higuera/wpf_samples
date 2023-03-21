@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel
         HorizontalAlignment="Center">
-        <views:AnalogClock ShowSeconds="True" TimeChanged="AnalogClock_OnTimeChanged"/>
-        <views:DigitalClock ColonBlink="True" ShowSeconds="True" HorizontalAlignment="Center" Margin="10" FontSize="50"/>
+        <!--<views:AnalogClock ShowSeconds="True" TimeChanged="AnalogClock_OnTimeChanged"/>
+        <views:DigitalClock ColonBlink="True" ShowSeconds="True" HorizontalAlignment="Center" Margin="10" FontSize="50"/>-->
+        <views:ControllableClock/>
     </StackPanel>
 </Window>
