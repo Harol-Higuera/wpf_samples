@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace CustomControlsInheritance.Views
+namespace CustomControlsResizable.Views
 {
     [TemplatePart(Name = "PART_HourHand", Type = typeof(Line))]
     [TemplatePart(Name = "PART_MinuteHand", Type = typeof(Line))]

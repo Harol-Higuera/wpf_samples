@@ -1,7 +1,7 @@
-﻿<Application x:Class="CustomControlsInheritance.App"
+﻿<Application x:Class="CustomControlsResizable.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CustomControlsInheritance"
+             xmlns:local="clr-namespace:CustomControlsResizable"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

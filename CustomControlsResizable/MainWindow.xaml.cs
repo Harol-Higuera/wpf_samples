@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace CustomControlsInheritance
+namespace CustomControlsResizable
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

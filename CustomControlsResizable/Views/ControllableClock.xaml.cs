@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CustomControlsInheritance.Views
+namespace CustomControlsResizable.Views
 {
     /// <summary>
     /// Interaction logic for ControllableClock.xaml

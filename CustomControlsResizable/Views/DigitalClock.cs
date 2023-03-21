@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace CustomControlsInheritance.Views
+namespace CustomControlsResizable.Views
 {
     [TemplatePart(Name = "PART_Colon", Type = typeof(UIElement))]
     public class DigitalClock: Clock
