@@ -44,8 +44,8 @@
                         </Style.Triggers>
                     </Style>
                 </Grid.Style>
-                <local:AnalogClock
-                    x:Name="MyClock" />
+                <ContentControl
+                    Content="{Binding Clock, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </Grid>
 
             <Grid
@@ -73,7 +73,7 @@
                 </Grid.RowDefinitions>
 
                 <CheckBox
-                    IsChecked="{Binding ShowSeconds, ElementName=MyClock}"
+                    IsChecked="{Binding Clock.ShowSeconds, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     Content="Show Seconds" />
             </Grid>
         </Grid>

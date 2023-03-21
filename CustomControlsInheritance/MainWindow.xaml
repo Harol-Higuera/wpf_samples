@@ -10,6 +10,10 @@
         HorizontalAlignment="Center">
         <!--<views:AnalogClock ShowSeconds="True" TimeChanged="AnalogClock_OnTimeChanged"/>
         <views:DigitalClock ColonBlink="True" ShowSeconds="True" HorizontalAlignment="Center" Margin="10" FontSize="50"/>-->
-        <views:ControllableClock/>
+        <views:ControllableClock>
+            <views:ControllableClock.Clock>
+                <views:DigitalClock FontSize="48"/>
+            </views:ControllableClock.Clock>
+        </views:ControllableClock>
     </StackPanel>
 </Window>

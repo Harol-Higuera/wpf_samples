@@ -20,6 +20,16 @@ namespace CustomControlsInheritance.Views
     /// </summary>
     public partial class ControllableClock : UserControl
     {
+        /// <summary>
+        /// Dependency property to set the Type Of clock in the XAML file
+        /// </summary>
+        public static readonly DependencyProperty ClockProperty = DependencyProperty.Register(
+            nameof(Clock), typeof(Clock), typeof(ControllableClock), new PropertyMetadata(null));
+        public Clock Clock
+        {
+            get => (Clock)GetValue(ClockProperty);
+            set => SetValue(ClockProperty, value);
+        }
         public ControllableClock()
         {
             InitializeComponent();
